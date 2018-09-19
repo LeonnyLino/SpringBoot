@@ -38,14 +38,11 @@ public class ConvidadoController {
 			@RequestParam("telefone") String telefone, Model model){
 		
 		Convidado novoConvidado = new Convidado(nome, email, telefone);
-		
 		service.salvar(novoConvidado);
 		
 		new EmailService().enviar(nome, email);
 		
 		Iterable<Convidado> convidados = service.obterTodos();
-		
-		
 		model.addAttribute("convidados", convidados);
 		
 		return "listaconvidados";

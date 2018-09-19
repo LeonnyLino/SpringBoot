@@ -13,11 +13,9 @@ public class ConvidadoService {
 	private ConvidadoRepository repository;
 	
 	public Iterable<Convidado> obterTodos(){
-		
 		Iterable<Convidado> convidados = repository.findAll();
 		
 		return convidados;
-		
 	}
 	
 	
